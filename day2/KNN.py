@@ -23,7 +23,7 @@ def knn_iris():
 
     # 4.KNN算法估计器
     estimator = KNeighborsClassifier(n_neighbors=3)
-    estimator.fit(x_train,y_train)
+    estimator.fit(x_train,y_train) # 调用完毕，模型生成
     # 5.模型评估
     # 方法1:直接比对真实值和预测值
     y_predict = estimator.predict(x_test)
