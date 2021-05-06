@@ -39,7 +39,7 @@ def nb_news():
     return None
 
 if __name__ == '__main__':
-    nb_news()
+     nb_news()
 """
 优点：
     对缺失数据不太敏感，算法也比较简单，常用于文本分类。
