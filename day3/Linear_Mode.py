@@ -9,6 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression,SGDRegressor,Ridge
 from sklearn.metrics import mean_squared_error
+import joblib
+
 # 正规方程的优化方法对波士顿房价进行预测
 def linear_Regression():
     # 1、获取数据
@@ -82,8 +84,14 @@ def linear_Ridge():
     x_test = transfer.transform(x_test)
 
     # 4、预估器
-    estimator = Ridge(alpha=0.7,max_iter=10000)
-    estimator.fit(x_train, y_train)
+    # estimator = Ridge(alpha=0.7,max_iter=10000)
+    # estimator.fit(x_train, y_train)
+
+    # 保存模型
+    # joblib.dump(estimator,"my_ridge.pkl")
+
+    # 加载模型
+    estimator = joblib.load("my_ridge.pkl")
 
     # 5、得出模型
     print("岭回归的权重系数为：\n", estimator.coef_)
